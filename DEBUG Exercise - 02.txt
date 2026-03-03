@@ -7,26 +7,23 @@ start
       string name
       num hours
       num rate
-      string DEDUCTION = 45
+      num DEDUCTION = 45
       string EOFNAME = "ZZZ"
       num gross
       num net
+
    output "Enter first name or ", EOFNAME, " to quit"
    input name
-   if name not equal to EOFNAME
+
+   while name <> EOFNAME
       output "Enter hours worked for ", name
       input hours
+
       output "Enter hourly rate for ", name
       input rate
+
       gross = hours * rate
       net = gross - DEDUCTION
-      while net > 0 then
-         output "Net pay for ", name, " is ", net
-      else
-          output "Deductions not covered. Net is 0."
-      endwhile
-      output "Enter next name or ", EOFNAME, " to quit"
-      input name
-   endif
-   output "End of job"
-stop
+
+      if net > 0 then
+         output "Net pay
